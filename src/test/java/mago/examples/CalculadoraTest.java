@@ -1,43 +1,20 @@
 package mago.examples;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-
-/* ****************
- * 1) Create the Test suite (static)
- * 2) Create constructor
- * 3) Implement tests
- * *************/
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 /**
- * Create the class extending from TestCase
+ * With JUnit4 just @Test annotation is needed and class name MUST end with "Test"
  */
-public class CalculadoraTest extends TestCase {
+
+public class CalculadoraTest {
 
     private Calculadora calculadora = new Calculadora();
 
     /**
-     * Create the suite.
-     * @return
-     */
-    public static Test suite(){
-        return new TestSuite( CalculadoraTest.class );
-    }
-
-    /**
-     * Constructor
-     * @param testName
-     */
-    public CalculadoraTest(String testName) {
-        // call super constructor with given testName
-        super(testName);
-    }
-
-
-    /**
      * Test case: Sumar
      */
+    @Test
     public void test_sumar() {
         assertEquals("Testing SUMAR", 9, this.calculadora.sumar(5, 4));
     }
@@ -45,6 +22,7 @@ public class CalculadoraTest extends TestCase {
     /**
      * Test case: Restar
      */
+    @Test
     public void test_restar() {
         assertEquals("Testing RESTAR", 4, this.calculadora.restar(8, 4));
     }
@@ -52,6 +30,7 @@ public class CalculadoraTest extends TestCase {
     /**
      * Test case: Multiplicar
      */
+    @Test
     public void test_multiplicar() {
         assertEquals("Testing MULTIPLICAR", 28, this.calculadora.multiplicar(14, 2));
     }
@@ -59,6 +38,7 @@ public class CalculadoraTest extends TestCase {
     /**
      * Test case: Dividir
      */
+    @Test
     public void test_dividir() {
         assertEquals("Testing DIVIDIR", 3, this.calculadora.divisionEntera(18, 6));
     }
@@ -66,6 +46,7 @@ public class CalculadoraTest extends TestCase {
     /**
      * Test case: Dividision (restpo
      */
+    @Test
     public void test_restoDivision() {
         assertEquals("Testing DIVIDIR (rest)", 1, this.calculadora.restoDivisionEntera(17, 4));
     }
