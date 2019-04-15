@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * With Jupiter just @Test annotation is needed and class name MUST end with "Test"
  */
 
-public class CalculadoraTest {
+class CalculadoraTest {
 
     private Calculadora calculadora = new Calculadora();
 
